@@ -6,8 +6,9 @@
     'base',
   ],
   'data': [
+    # 'views/toko_produk.xml',
     'views/toko_struk.xml',
-    'views/toko_produk.xml',
+    'views/toko_kasir.xml',
   ],
   'qweb': [
     # 'static/src/xml/nama_widget.xml',

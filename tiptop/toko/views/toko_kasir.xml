@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record model="ir.ui.view" id="toko_kasir_tree">
+            <field name="name">toko.kasir.tree</field>
+            <field name="model">toko.kasir</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="alamat"/>
+                    <field name="tahun_masuk"/>
+                    <field name="indeks_prestasi"/>
+                    <field name="tanggal_lahir"/>
+                    <field name="waktu_bangun"/>
+                    <field name="gender"/>
+                    <field name="created_at"/>
+                    <field name="is_part_time"/>
+                </tree>
+            </field>
+        </record>
+
+        
+        <!-- Form View -->
+        <record model="ir.ui.view" id="toko_kasir_form">
+            <field name="name">toko.kasir.form</field>
+            <field name="model">toko.kasir</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                                 <field name="alamat"/>
+                                <field name="tahun_masuk" readonly="1"/>
+                                <field name="indeks_prestasi" invisible="1"/>
+                                <field name="tanggal_lahir"/>
+                                <field name="waktu_bangun"/>
+                            </group>
+                            <group>
+                                <field name="gender"/>
+                                <field name="is_part_time"/>
+                                <field name="created_at"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="toko_kasir_action">
+            <field name="name">Toko Kasir</field>
+            <field name="res_model">toko.kasir</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            id="main_toko_kasir"
+            name="Toko Kasir"
+        />
+
+        <menuitem 
+            id="menu_toko_kasir"
+            name="Toko Kasir"
+            parent="main_toko_kasir"
+        />
+
+        <menuitem 
+            id="submenu_toko_kasir"
+            name="Toko Kasir"
+            parent="menu_toko_kasir"
+
+            action="toko_kasir_action"
+        />
+
+    </data>
+</odoo>

@@ -8,7 +8,8 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="harga"/>
+                    <field name="harga" />
+                    <field name="kasir_id" />
                 </tree>
             </field>
         </record>
@@ -26,6 +27,7 @@
                             <group>
                                 <field name="name"/>
                                 <field name="harga"/>
+                                <field name="kasir_id" options="{'no_open': True, 'no_create': True}"/>
                             </group>
                             <group>
                             </group>
@@ -43,22 +45,21 @@
         </record>
 
         <menuitem 
-            id="main_toko_struk"
-            name="Toko Struk"
+            id="kakek_toko_struk" 
+            name="Kakek Toko Struk" 
         />
 
         <menuitem 
-            id="menu_toko_struk"
-            name="Toko Struk"
-            parent="main_toko_struk"
+            id="bapak_toko_struk" 
+            name="Bapak Toko Struk" 
+            parent="kakek_toko_struk" 
         />
 
         <menuitem 
-            id="submenu_toko_struk"
-            name="Toko Struk"
-            parent="menu_toko_struk"
-
-            action="toko_struk_action"
+            id="anak_toko_struk" 
+            name="Anak Toko Struk" 
+            parent="bapak_toko_struk" 
+            action="toko_struk_action" 
         />
 
     </data>
