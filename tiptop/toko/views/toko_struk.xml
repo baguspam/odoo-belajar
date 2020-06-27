@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record model="ir.ui.view" id="toko_struk_tree">
+            <field name="name">toko.struk.tree</field>
+            <field name="model">toko.struk</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="harga"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record model="ir.ui.view" id="toko_struk_form">
+            <field name="name">toko.struk.form</field>
+            <field name="model">toko.struk</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="harga"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="toko_struk_action">
+            <field name="name">Toko Struk</field>
+            <field name="res_model">toko.struk</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            id="main_toko_struk"
+            name="Toko Struk"
+        />
+
+        <menuitem 
+            id="menu_toko_struk"
+            name="Toko Struk"
+            parent="main_toko_struk"
+        />
+
+        <menuitem 
+            id="submenu_toko_struk"
+            name="Toko Struk"
+            parent="menu_toko_struk"
+
+            action="toko_struk_action"
+        />
+
+    </data>
+</odoo>
